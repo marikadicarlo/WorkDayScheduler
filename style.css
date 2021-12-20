@@ -33,6 +33,7 @@ textarea{
 .row {
   white-space: pre-wrap;
   height: 80px;
+  width: 700px;
   border-top: 1px solid white;;
 }
 
@@ -68,4 +69,24 @@ textarea{
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.timeDisplay {
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: #06AED5;
+  color: white;
+  white-space: pre-wrap;
+  height: 80px;
+  width: 80px;
+}
+
+.timeRow {
+  height: 80px;
+  text-align: center;
+  border-radius: 15px;
 }
