@@ -32,3 +32,8 @@ THEN the saved events persist
 ```
 
 ## Resources
+https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-save
+
+https://getbootstrap.com/docs/4.0/layout/grid/
+
+https://learn.jquery.com/using-jquery-core/document-ready/
