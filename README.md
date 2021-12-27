@@ -1,4 +1,4 @@
-# WorkDayScheduler
+# Work Day Scheduler
 
 [Link to Work Day Scheduler](https://marikadicarlo.github.io/WorkDayScheduler/)
 
