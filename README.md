@@ -2,10 +2,12 @@
 
 ![Insert Link]()
 
-![work-day-scheduler]()
+![work-day-scheduler](./workdayscheduler.png)
 
 ## Work Day Scheduler Challenge
+This Challenge required me to create a work day scheduler, using HTML, Javascript, and CSS which was provided. The application allows the user to create new tasks during the hours of 9:00am - 5:00pm.
 
+Unfortunately, I am having trouble with local storage. When the webpage refreshes, the information is not saved.
 
 
 ## User Story
