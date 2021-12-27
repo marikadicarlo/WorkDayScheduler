@@ -4,7 +4,8 @@
 
 ![work-day-scheduler]()
 
-## Heading
+## Work Day Scheduler Challenge
+
 
 
 ## User Story

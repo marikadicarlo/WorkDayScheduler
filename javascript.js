@@ -1,53 +1,50 @@
-// Display today's day and date
-var currentDate = moment().format("dddd, MMM Do YYYY");
-$("#currentDay").html(currentDate);
+var saveBtn = $(".saveBtn");
 
-$(document).ready(function() {
-    // saveBtn click listener
-    $("saveBtn").on("click", function() {
-        var text = $(this).siblings(".description").val();
-        var time = $(this).parent().attr("id");
+// Current day is displayed at the top of the calender
+$("#currentDay").text(moment().format("dddd, MMM Do YYYY"));
 
-        // save text to local storage
-        localStorage.setItem(time, text);
-});
+// Each time block is color-coded to indicate whether it is in the past, present, or future
+function timeColor() {
+    var hour = moment().hours();
 
-function timeTracker() {
-    // get current number of hours
-    var timeNow = moment().hour();
+    $(".time-block").each(function() {
+        var currentHour = parseInt($(this).attr("id"));
 
-    // loop over time blocks
-    $(".time-block").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
-
-        // Check the time and add the classes for background indicators
-        if (blockTime < timeNow) {
-            $(this).removeClass("future");
-            $(this).removeClass("present");
-            $(this).addClass("past");
-        } else if (blockTime === timeNow) {
-            $(this).removeClass("past");
-            $(this).removeClass("future");
+        if (currentHour > hour) {
+            $(this).addClass("future");
+        } else if (currentHour === hour) {
             $(this).addClass("present");
         } else {
-            $(this).removeClass("present");
-            $(this).removeClass("past");
-            $(this).addClass("future");
+            $(this).addClass("past");
         }
     })
+};
+
+// WHEN I click the save button for that time block
+saveBtn.on("click", function() {
+    console.log("save button");
+    var time = $(this).siblings(".hour").text();
+    var task = $(this).siblings(".task").val();
+
+// THEN the text for that event is saved in local storage
+localStorage.setItem(time, task);
+});
+
+// WHEN I refresh the page THEN the saved events persist
+function useTask() {
+
+    $(".hour").each(function() {
+        var currentHour = $(this).text();
+        var currentTask = localStorage.getItem(currentHour);
+
+        //console.log(this);
+        //console.log(currentHour);
+
+        if (currentTask !== null) {
+            $(this).siblings(".task").val(currentTask);
+        }
+    });
 }
 
-// get items from local storage
-$("#7 .description").val(localStorage.getItem("7"));
-$("#8 .description").val(localStorage.getItem("8"));
-$("#9 .description").val(localStorage.getItem("9"));
-$("#10 .description").val(localStorage.getItem("10"));
-$("#11 .description").val(localStorage.getItem("11"));
-$("#12 .description").val(localStorage.getItem("12"));
-$("#13 .description").val(localStorage.getItem("13"));
-$("#14 .description").val(localStorage.getItem("14"));
-$("#15 .description").val(localStorage.getItem("15"));
-$("#16 .description").val(localStorage.getItem("16"));
-$("#17 .description").val(localStorage.getItem("17"));
-
-timeTracker();
+timeColor();
+useTask();
