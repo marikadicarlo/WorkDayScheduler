@@ -1,6 +1,6 @@
 # WorkDayScheduler
 
-![Insert Link]()
+![Link to Work Day Scheduler](https://marikadicarlo.github.io/WorkDayScheduler/)
 
 ![work-day-scheduler](./workdayscheduler.png)
 
